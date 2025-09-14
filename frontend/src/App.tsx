@@ -1,10 +1,9 @@
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Home from "./pages/home";
-import Metrics from "./pages/metrics";
-import AddFeedback from "./pages/addFeedback";
+import ISSMHome from "./pages/home";
+import ISSMMetrics from "./pages/metrics";
+import ISSMAddFeedback from "./pages/addFeedback";
 
 function App() {
-  console.log(import.meta.env.VITE_API_BASE_URL, "url");
   return (
     <Router>
       <nav className=" flex items-center justify-center my-4 gap-4 ">
@@ -29,9 +28,9 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/metrics" element={<Metrics />} />
-        <Route path="/add" element={<AddFeedback />} />
+        <Route path="/" element={<ISSMHome />} />
+        <Route path="/metrics" element={<ISSMMetrics />} />
+        <Route path="/add" element={<ISSMAddFeedback />} />
       </Routes>
     </Router>
   );

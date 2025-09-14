@@ -24,7 +24,7 @@ export type ApiRequestProps = {
   _id?: string;
   payload: formData;
 };
-export default function FeedBackForm({
+export default function ISSMFeedBackForm({
   name = "",
   rating = 1,
   comment = "",

@@ -1,6 +1,6 @@
 import { ISSMGetFeedbacks } from "@/api/feedback";
 import { Input } from "@/components/ui/input";
-import FormModal from "@/components/ui/local/formModal";
+import ISSMFormModal from "@/components/ui/local/formModal";
 import {
   Table,
   TableBody,
@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useSearchParams } from "react-router-dom";
-import Pagination from "@/components/ui/local/pagination";
+import ISSMPagination from "@/components/ui/local/pagination";
 
 type feedback = {
   name: string;
@@ -33,7 +33,7 @@ type data = {
   page: number;
   total: number;
 };
-export default function Home() {
+export default function ISSMHome() {
   const [feedbacks, setFeedbacks] = useState<data | null>(null);
   const [name, setName] = useState("");
   const [rating, setRating] = useState("0");
@@ -111,14 +111,17 @@ export default function Home() {
                 <TableCell>{item.comment}</TableCell>
                 <TableCell>{item.rating}</TableCell>
                 <TableCell className="text-right">
-                  <FormModal isEdit={true} {...item} />
+                  <ISSMFormModal isEdit={true} {...item} />
                 </TableCell>
               </TableRow>
             ))
           )}
         </TableBody>
       </Table>
-      <Pagination count={feedbacks?.total || 0} limit={feedbacks?.limit || 0} />
+      <ISSMPagination
+        count={feedbacks?.total || 0}
+        limit={feedbacks?.limit || 0}
+      />
     </div>
   );
 }

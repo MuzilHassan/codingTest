@@ -6,7 +6,7 @@ type metricsType = {
   averageRating: number;
   counts: { 1: number; 2: number; 3: number; 4: number; 5: number };
 };
-export default function Metrics() {
+export default function ISSMMetrics() {
   const [metrics, setMetrics] = useState<metricsType | null>(null);
   console.log(metrics);
   useEffect(() => {

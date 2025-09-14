@@ -5,7 +5,7 @@ type props = {
   count: number;
   limit: number;
 };
-function Pagination({ count, limit }: props) {
+function ISSMPagination({ count, limit }: props) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const current = searchParams.get("page")
@@ -52,4 +52,4 @@ function Pagination({ count, limit }: props) {
   );
 }
 
-export default Pagination;
+export default ISSMPagination;
