@@ -1,0 +1,22 @@
+
+
+FROM node:20-alpine
+
+
+WORKDIR /src
+
+
+COPY package*.json ./
+
+# Step 4: Install dependencies
+RUN npm install
+
+# Step 5: Copy the rest of the app's source code
+COPY . .
+
+# Step 6: Build the React app for production
+RUN npm run build
+
+EXPOSE 3000
+
+
